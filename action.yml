@@ -9,9 +9,6 @@ inputs:
 runs:
   using: "composite"
   steps:
-    - run: ${{ tojson(github) }}
-      shell: cat {0}
-
     - id: app-token
       if: ${{ inputs.app-id != '' && inputs.private-key != '' }}
       uses: kt-actions/create-github-app-token@v1
