@@ -3,7 +3,6 @@ name: Major-Release-Tag
 on:
   release:
     types: [created]
-  workflow_dispatch:
 
 jobs:
   movetag:
