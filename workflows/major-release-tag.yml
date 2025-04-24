@@ -1,0 +1,15 @@
+name: Major-Release-Tag
+
+on:
+  release:
+    types: [created]
+
+jobs:
+  movetag:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: kt-actions/major-release-tag@v1
+        # with:
+        #   app-id: ${{ secrets.WORKFLOW_APP_ID }}
+        #   private-key: ${{ secrets.WORKFLOW_APP_PRIVATE_KEY }}
