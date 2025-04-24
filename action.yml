@@ -41,3 +41,4 @@ runs:
         echo "Major version: ${MAJOR}"
         git tag -fa "${MAJOR}" -m 'Update major version tag'
         git push origin "${MAJOR}" --force
+
