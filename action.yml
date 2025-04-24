@@ -18,8 +18,8 @@ runs:
         configure-git: true
 
     - uses: actions/checkout@v4
-      with:
-        token: ${{ steps.app-token.outputs.token || secrets.GITHUB_TOKEN }}
+      # with:
+      #   token: ${{ steps.app-token.outputs.token || secrets.GITHUB_TOKEN }}
 
     - name: Get major version num and update tag
       shell: bash
