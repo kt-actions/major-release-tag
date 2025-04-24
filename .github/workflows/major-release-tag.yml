@@ -8,6 +8,9 @@ jobs:
   movetag:
     runs-on: ubuntu-latest
 
+    permissions:
+      contents: write
+
     steps:
       - uses: kt-actions/major-release-tag@v1
         # with:
