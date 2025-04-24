@@ -21,8 +21,17 @@ runs:
         configure-git: true
 
     - uses: actions/checkout@v4
-      # with:
-      #   token: ${{ steps.app-token.outputs.token || secrets.GITHUB_TOKEN }}
+      with:
+        token: ${{ steps.app-token.outputs.token || github.token }}
+
+    # Configure git user name and email for the app if app-id and private-key were not provided
+    - id: configure-git
+      if: ${{ steps.app-token.outputs.token == ''}}
+      shell: bash
+      run: |
+        echo "Configuring git user name and email for the app"
+        git config --global user.name "github-actions[bot]"
+        git config --global user.email "github-actions[bot]@users.noreply.github.com"
 
     - name: Get major version num and update tag
       shell: bash
